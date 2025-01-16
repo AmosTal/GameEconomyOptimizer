@@ -6,48 +6,82 @@ export function simulateEconomy(config) {
   // Initial state
   let active_players = 1000;
   let total_tokens = 0;
+  let days_to_unlock = null;
+  let total_tokens_for_unlock = 0;
   
   // Dynamic rates based on rewards
-  const baseWinRate = 0.4;
-  const basePurchaseRate = 0.1;
-  const baseRetentionRate = 0.95;
+  const baseWinRate = 0.3;
+  const basePurchaseRate = 0.15;
+  const baseRetentionRate = 0.85;
   
-  // Calculate dynamic rates based on config
-  const tokenSatisfactionRate = Math.min(1, (config.daily_login_reward + config.win_reward) / 150);
-  const progressionRate = Math.min(1, 1000 / config.board_unlock_cost);
+  // Calculate initial satisfaction and progression metrics
+  const tokenSatisfactionRate = Math.min(1, (config.daily_login_reward + config.win_reward) / 300);
+  const progressionRate = Math.max(0, 1 - (config.board_unlock_cost / 1200));
+  
+  // Introduce more stable initial conditions
+  const initialPlayerQuality = Math.max(0.5, tokenSatisfactionRate * progressionRate);
   
   for (let day = 1; day <= days; day++) {
-    // Adjust rates based on economy balance
-    const win_rate = baseWinRate * (1 + (config.win_reward - 25) / 100);
-    const retention_rate = baseRetentionRate * (tokenSatisfactionRate + progressionRate) / 2;
-    const purchase_rate = basePurchaseRate * (1 - tokenSatisfactionRate) * (config.board_unlock_cost / 500);
+    // More nuanced decay and growth
+    const retentionFactor = Math.max(0.3, 1 - (day / (days * 2)));
+    const growthFactor = Math.max(0.1, 1 - (day / (days * 1.5)));
     
-    // Calculate daily metrics
-    const daily_active = Math.floor(active_players * retention_rate);
+    // Dynamic win and purchase rates with more stable progression
+    const win_rate = baseWinRate * (1 + Math.log(config.win_reward / 25) * 0.2) * retentionFactor;
+    const purchase_rate = basePurchaseRate * (1 / (1 + Math.exp(-config.board_unlock_cost / 500))) * growthFactor;
+    
+    // Refined daily active player calculation
+    const daily_active = Math.floor(
+      active_players * 
+      baseRetentionRate * 
+      initialPlayerQuality * 
+      retentionFactor * 
+      (1 + Math.log(day) * 0.1)
+    );
+    
     const daily_winners = Math.floor(daily_active * win_rate);
     const daily_login_tokens = daily_active * config.daily_login_reward;
     const daily_win_tokens = daily_winners * config.win_reward;
     
     // Calculate daily token earnings per player
-    const daily_tokens_per_player = (daily_login_tokens + daily_win_tokens) / daily_active;
+    const daily_tokens_per_player = (daily_login_tokens + daily_win_tokens) / (daily_active || 1);
     
-    // Calculate purchases based on token scarcity
+    // More robust days to unlock calculation
+    total_tokens_for_unlock += daily_tokens_per_player * daily_active;
+    
+    if (days_to_unlock === null && total_tokens_for_unlock >= config.board_unlock_cost) {
+      days_to_unlock = day;
+    }
+    
+    // Advanced scarcity and purchase dynamics
     const token_scarcity = Math.max(0, 1 - (daily_tokens_per_player / config.board_unlock_cost));
     const potential_buyers = Math.floor(daily_active * purchase_rate * token_scarcity);
-    const actual_buyers = Math.floor(potential_buyers * (0.3 + Math.random() * 0.2));
-    const revenue = actual_buyers * (config.board_unlock_cost / 100);
+    
+    // Probabilistic buyer conversion with more complex dynamics
+    const buyer_conversion_base = 0.3;
+    const buyer_conversion_rate = buyer_conversion_base * (1 - Math.exp(-potential_buyers / 75));
+    const actual_buyers = Math.floor(potential_buyers * buyer_conversion_rate);
+    
+    // Revenue calculation with enhanced elasticity
+    const base_revenue_per_buyer = config.board_unlock_cost / 25;
+    const revenue_elasticity = Math.max(0.5, 1 - Math.log(actual_buyers + 1) / 10);
+    const revenue = actual_buyers * base_revenue_per_buyer * revenue_elasticity;
     
     // Update total tokens
     total_tokens += daily_login_tokens + daily_win_tokens;
     
-    // Simulate player growth/churn based on satisfaction
-    const satisfaction = (tokenSatisfactionRate + progressionRate) / 2;
-    const churn_rate = 0.05 * (1 - satisfaction);
-    const growth_rate = 0.08 * satisfaction;
+    // More stable player dynamics
+    const satisfaction = Math.min(1, (tokenSatisfactionRate + progressionRate) / 2);
+    const base_churn_rate = 0.2;
+    const base_growth_rate = 0.1;
+    
+    const churn_rate = base_churn_rate * (1 - satisfaction) * retentionFactor;
+    const growth_rate = base_growth_rate * satisfaction * growthFactor;
     
     const churned_players = Math.floor(active_players * churn_rate);
-    const new_players = Math.floor(active_players * growth_rate);
-    active_players = active_players - churned_players + new_players;
+    const new_players = Math.floor(active_players * growth_rate * (1 + Math.log(day) * 0.05));
+    
+    active_players = Math.max(100, active_players - churned_players + new_players);
     
     // Store daily insights
     monetization_insights[`Day ${day}`] = {
@@ -57,7 +91,8 @@ export function simulateEconomy(config) {
       daily_winners: daily_winners,
       new_players: new_players,
       churned_players: churned_players,
-      satisfaction_rate: satisfaction * 100
+      satisfaction_rate: satisfaction * 100,
+      token_scarcity: token_scarcity * 100
     };
   }
   
@@ -66,9 +101,9 @@ export function simulateEconomy(config) {
     summary: {
       final_active_players: active_players,
       total_tokens_distributed: total_tokens,
+      days_to_unlock: days_to_unlock,
       average_daily_revenue: Object.values(monetization_insights)
-        .reduce((sum, day) => sum + day.total_revenue, 0) / days,
-      player_satisfaction: (tokenSatisfactionRate + progressionRate) / 2 * 100
+        .reduce((sum, day) => sum + day.total_revenue, 0) / days
     }
   };
 }
