@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const useWebSocket = (url) => {
+const BACKEND_URL = process.env.REACT_APP_API_URL || 'https://web-production-cd87.up.railway.app';
+
+const useWebSocket = (url = BACKEND_URL) => {
   const [socket, setSocket] = useState(null);
   const [isConnected, setIsConnected] = useState(false);
   const [lastMessage, setLastMessage] = useState(null);
