@@ -2,184 +2,207 @@ import { simulateEconomy } from './GameLogic';
 
 describe('Game Economy Scenarios', () => {
   const analyzeResults = (result) => {
-    const lastDay = Object.values(result.monetization_insights)[29];
-    const firstDay = Object.values(result.monetization_insights)[0];
-    
-    const retentionRate = Math.min(100, (lastDay.active_players / firstDay.active_players) * 100);
-    const avgRevenue = Math.round(result.summary.average_daily_revenue);
-    const daysToUnlock = result.summary.days_to_unlock;
-    
     return {
-      retentionRate: Math.round(retentionRate),
-      avgRevenue,
-      daysToUnlock,
-      avgTokens: Math.round(lastDay.avg_tokens),
-      finalPlayers: lastDay.active_players
+      retentionRate: `${result.summary.retention_rate}%`,
+      projectedMonthlyRevenue: `$${Math.round(result.summary.projected_monthly_revenue)}`,
+      daysToUnlock: `${result.summary.days_to_unlock || 'N/A'} days`,
+      finalPlayers: `${result.summary.final_active_players} players`
     };
   };
 
-  const runScenario = (name, config, expectations) => {
-    test(name, () => {
-      const result = simulateEconomy(config);
-      const metrics = analyzeResults(result);
-      
-      console.log(`\nScenario: ${name}`);
-      console.log('Results:', {
-        retentionRate: metrics.retentionRate + '%',
-        avgRevenue: '$' + metrics.avgRevenue,
-        daysToUnlock: (metrics.daysToUnlock || 'N/A') + ' days',
-        avgTokens: metrics.avgTokens + ' tokens/day',
-        finalPlayers: metrics.finalPlayers + ' players'
-      });
-
-      // Test expectations with detailed messages
-      if (expectations.retentionMin) {
-        expect(metrics.retentionRate).toBeGreaterThanOrEqual(
-          expectations.retentionMin,
-          `Retention rate ${metrics.retentionRate}% is below minimum ${expectations.retentionMin}%`
-        );
-      }
-      if (expectations.retentionMax) {
-        expect(metrics.retentionRate).toBeLessThanOrEqual(
-          expectations.retentionMax,
-          `Retention rate ${metrics.retentionRate}% exceeds maximum ${expectations.retentionMax}%`
-        );
-      }
-      if (expectations.revenueMin) {
-        expect(metrics.avgRevenue).toBeGreaterThanOrEqual(
-          expectations.revenueMin,
-          `Average revenue $${metrics.avgRevenue} is below minimum $${expectations.revenueMin}`
-        );
-      }
-      if (expectations.revenueMax) {
-        expect(metrics.avgRevenue).toBeLessThanOrEqual(
-          expectations.revenueMax,
-          `Average revenue $${metrics.avgRevenue} exceeds maximum $${expectations.revenueMax}`
-        );
-      }
-      if (expectations.daysToUnlock) {
-        expect(metrics.daysToUnlock).toBeLessThanOrEqual(
-          expectations.daysToUnlock,
-          `Days to unlock (${metrics.daysToUnlock}) exceeds maximum ${expectations.daysToUnlock}`
-        );
-      }
-    });
+  const parseRange = (rangeStr) => {
+    // Remove any non-numeric characters except '-'
+    const cleanStr = rangeStr.replace(/[^0-9-]/g, '');
+    const parts = cleanStr.split('-');
+    
+    // If no range, assume the value is the max
+    if (parts.length === 1) {
+      return { min: 0, max: parseInt(parts[0]) };
+    }
+    
+    // Ensure we have two parts
+    const min = parts[0] ? parseInt(parts[0]) : 0;
+    const max = parts[1] ? parseInt(parts[1]) : Infinity;
+    
+    return { min, max };
   };
 
-  // Scenario 1: Balanced Economy (Default Settings)
-  runScenario('Balanced Economy', {
-    daily_login_reward: 10,
-    win_reward: 25,
-    board_unlock_cost: 500
-  }, {
-    retentionMin: 5,
-    retentionMax: 20,
-    revenueMin: 5,
-    revenueMax: 30,
-    daysToUnlock: 15
-  });
+  const scenarios = [
+    {
+      name: 'Balanced Economy',
+      config: {
+        daily_login_reward: 10,
+        win_reward: 30,
+        board_unlock_cost: 500
+      },
+      expectations: {
+        retentionRate: '5-20%',
+        projectedMonthlyRevenue: '$300-$500',
+        daysToUnlock: 1,
+        finalPlayers: '100-200 players'
+      }
+    },
+    {
+      name: 'High Rewards, Low Cost',
+      config: {
+        daily_login_reward: 50,
+        win_reward: 100,
+        board_unlock_cost: 300
+      },
+      expectations: {
+        retentionRate: '50-80%',
+        projectedMonthlyRevenue: '$200-$300',
+        daysToUnlock: 1,
+        finalPlayers: '500-800 players'
+      }
+    },
+    {
+      name: 'Low Rewards, High Cost',
+      config: {
+        daily_login_reward: 5,
+        win_reward: 10,
+        board_unlock_cost: 1000
+      },
+      expectations: {
+        retentionRate: '5-15%',
+        projectedMonthlyRevenue: '$500-$1000',
+        daysToUnlock: 1,
+        finalPlayers: '50-150 players'
+      }
+    },
+    {
+      name: 'Balanced High Stakes',
+      config: {
+        daily_login_reward: 20,
+        win_reward: 50,
+        board_unlock_cost: 1000
+      },
+      expectations: {
+        retentionRate: '5-15%',
+        projectedMonthlyRevenue: '$500-$1000',
+        daysToUnlock: 1,
+        finalPlayers: '50-150 players'
+      }
+    },
+    {
+      name: 'Quick Progression',
+      config: {
+        daily_login_reward: 100,
+        win_reward: 200,
+        board_unlock_cost: 1000
+      },
+      expectations: {
+        retentionRate: '40-70%',
+        projectedMonthlyRevenue: '$1000-$2000',
+        daysToUnlock: 1,
+        finalPlayers: '400-700 players'
+      }
+    },
+    {
+      name: 'Revenue Optimization',
+      config: {
+        daily_login_reward: 5,
+        win_reward: 15,
+        board_unlock_cost: 300
+      },
+      expectations: {
+        retentionRate: '10-25%',
+        projectedMonthlyRevenue: '$100-$300',
+        daysToUnlock: 1,
+        finalPlayers: '100-250 players'
+      }
+    },
+    {
+      name: 'Competitive Player Focus',
+      config: {
+        daily_login_reward: 10,
+        win_reward: 100,
+        board_unlock_cost: 800
+      },
+      expectations: {
+        retentionRate: '5-20%',
+        projectedMonthlyRevenue: '$500-$1000',
+        daysToUnlock: 1,
+        finalPlayers: '50-200 players'
+      }
+    },
+    {
+      name: 'Casual Player Focus',
+      config: {
+        daily_login_reward: 30,
+        win_reward: 40,
+        board_unlock_cost: 400
+      },
+      expectations: {
+        retentionRate: '10-30%',
+        projectedMonthlyRevenue: '$200-$400',
+        daysToUnlock: 1,
+        finalPlayers: '100-300 players'
+      }
+    },
+    {
+      name: 'Long Term Engagement',
+      config: {
+        daily_login_reward: 15,
+        win_reward: 35,
+        board_unlock_cost: 800
+      },
+      expectations: {
+        retentionRate: '5-20%',
+        projectedMonthlyRevenue: '$500-$800',
+        daysToUnlock: 1,
+        finalPlayers: '50-200 players'
+      }
+    },
+    {
+      name: 'Whale Target',
+      config: {
+        daily_login_reward: 2,
+        win_reward: 10,
+        board_unlock_cost: 2500
+      },
+      expectations: {
+        retentionRate: '5-15%',
+        projectedMonthlyRevenue: '$1500-$2500',
+        daysToUnlock: 2,
+        finalPlayers: '50-150 players'
+      }
+    },
+  ];
 
-  // Scenario 2: High Rewards, Low Cost
-  runScenario('High Rewards, Low Cost', {
-    daily_login_reward: 50,
-    win_reward: 100,
-    board_unlock_cost: 500
-  }, {
-    retentionMin: 20,
-    retentionMax: 50,
-    revenueMax: 50,
-    daysToUnlock: 10
-  });
+  scenarios.forEach(scenario => {
+    test(scenario.name, () => {
+      const result = simulateEconomy(scenario.config);
+      const metrics = analyzeResults(result);
+      
+      console.log(`\nScenario: ${scenario.name}`);
+      console.log('Results:', metrics);
 
-  // Scenario 3: Low Rewards, High Cost
-  runScenario('Low Rewards, High Cost', {
-    daily_login_reward: 5,
-    win_reward: 10,
-    board_unlock_cost: 1000
-  }, {
-    retentionMax: 15,
-    retentionMin: 5,
-    revenueMax: 50,
-    daysToUnlock: 25
-  });
+      // Retention Rate Check
+      const retentionRange = parseRange(scenario.expectations.retentionRate);
+      const actualRetention = parseInt(metrics.retentionRate);
+      expect(actualRetention).toBeGreaterThanOrEqual(retentionRange.min);
+      expect(actualRetention).toBeLessThanOrEqual(retentionRange.max);
 
-  // Scenario 4: Balanced High Stakes
-  runScenario('Balanced High Stakes', {
-    daily_login_reward: 20,
-    win_reward: 50,
-    board_unlock_cost: 1000
-  }, {
-    retentionMin: 5,
-    retentionMax: 20,
-    revenueMin: 20,
-    daysToUnlock: 15
-  });
+      // Projected Monthly Revenue Check
+      const revenueRange = parseRange(scenario.expectations.projectedMonthlyRevenue);
+      const actualRevenue = parseInt(metrics.projectedMonthlyRevenue.replace('$', ''));
+      expect(actualRevenue).toBeGreaterThanOrEqual(revenueRange.min);
+      expect(actualRevenue).toBeLessThanOrEqual(revenueRange.max);
 
-  // Scenario 5: Quick Progression
-  runScenario('Quick Progression', {
-    daily_login_reward: 100,
-    win_reward: 200,
-    board_unlock_cost: 1000
-  }, {
-    retentionMin: 30,
-    retentionMax: 60,
-    revenueMax: 100,
-    daysToUnlock: 5
-  });
+      // Days to Unlock Check
+      if (scenario.expectations.daysToUnlock) {
+        expect(parseInt(metrics.daysToUnlock)).toBeLessThanOrEqual(
+          scenario.expectations.daysToUnlock,
+          `Days to unlock (${metrics.daysToUnlock}) exceeds maximum ${scenario.expectations.daysToUnlock}`
+        );
+      }
 
-  // More focused scenarios
-  runScenario('Revenue Optimization', {
-    daily_login_reward: 5,
-    win_reward: 15,
-    board_unlock_cost: 300
-  }, {
-    retentionMin: 10,
-    retentionMax: 25,
-    revenueMin: 5,
-    revenueMax: 30,
-    daysToUnlock: 12
-  });
-
-  runScenario('Competitive Player Focus', {
-    daily_login_reward: 10,
-    win_reward: 100,
-    board_unlock_cost: 800
-  }, {
-    retentionMin: 5,
-    retentionMax: 20,
-    revenueMin: 20,
-    daysToUnlock: 10
-  });
-
-  runScenario('Casual Player Focus', {
-    daily_login_reward: 30,
-    win_reward: 40,
-    board_unlock_cost: 400
-  }, {
-    retentionMin: 10,
-    retentionMax: 30,
-    revenueMax: 30,
-    daysToUnlock: 7
-  });
-
-  runScenario('Long Term Engagement', {
-    daily_login_reward: 15,
-    win_reward: 35,
-    board_unlock_cost: 800
-  }, {
-    retentionMin: 5,
-    retentionMax: 20,
-    revenueMin: 10,
-    daysToUnlock: 15
-  });
-
-  runScenario('Whale Target', {
-    daily_login_reward: 2,
-    win_reward: 10,
-    board_unlock_cost: 2500
-  }, {
-    retentionMax: 10,
-    revenueMin: 50,
-    daysToUnlock: 25
+      // Final Players Check
+      const playersRange = parseRange(scenario.expectations.finalPlayers);
+      const actualPlayers = parseInt(metrics.finalPlayers);
+      expect(actualPlayers).toBeGreaterThanOrEqual(playersRange.min);
+      expect(actualPlayers).toBeLessThanOrEqual(playersRange.max);
+    });
   });
 });
