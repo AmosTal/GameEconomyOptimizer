@@ -1,12 +1,10 @@
 [build]
 builder = "nixpacks"
+buildCommand = "npm install && npm run build"
 
 [deploy]
-startCommand = "python backend/app.py"
+startCommand = "npm run serve"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
 numReplicas = 1
-
-[service]
-rootDirectory = "backend"
