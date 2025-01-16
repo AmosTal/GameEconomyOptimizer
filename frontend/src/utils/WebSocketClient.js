@@ -1,55 +1,52 @@
 import { useState, useEffect } from 'react';
 
-const BACKEND_URL = process.env.REACT_APP_API_URL || 'https://web-production-cd87.up.railway.app';
+// Simulated game economy data
+const simulateGameData = () => ({
+  economy: {
+    currency: Math.floor(Math.random() * 1000),
+    resources: {
+      gold: Math.floor(Math.random() * 100),
+      gems: Math.floor(Math.random() * 50),
+      energy: Math.floor(Math.random() * 100)
+    }
+  },
+  players: {
+    active: Math.floor(Math.random() * 1000),
+    paying: Math.floor(Math.random() * 100)
+  },
+  metrics: {
+    retention: Math.random() * 100,
+    monetization: Math.random() * 100,
+    engagement: Math.random() * 100
+  }
+});
 
-const useWebSocket = (url = BACKEND_URL) => {
-  const [socket, setSocket] = useState(null);
-  const [isConnected, setIsConnected] = useState(false);
-  const [lastMessage, setLastMessage] = useState(null);
+const useGameData = () => {
+  const [gameData, setGameData] = useState(simulateGameData());
+  const [isConnected, setIsConnected] = useState(true);
 
   useEffect(() => {
-    // Create WebSocket connection
-    const ws = new WebSocket(url);
+    // Update data every 5 seconds
+    const interval = setInterval(() => {
+      setGameData(simulateGameData());
+    }, 5000);
 
-    // Connection opened
-    ws.onopen = () => {
-      console.log('WebSocket Connected');
-      setIsConnected(true);
-    };
-
-    // Listen for messages
-    ws.onmessage = (event) => {
-      console.log('Message from server:', event.data);
-      setLastMessage(event.data);
-    };
-
-    // Connection closed
-    ws.onclose = () => {
-      console.log('WebSocket Disconnected');
-      setIsConnected(false);
-    };
-
-    // Error handling
-    ws.onerror = (error) => {
-      console.error('WebSocket Error:', error);
-    };
-
-    // Set socket state
-    setSocket(ws);
-
-    // Cleanup on component unmount
-    return () => {
-      ws.close();
-    };
-  }, [url]);
+    return () => clearInterval(interval);
+  }, []);
 
   const sendMessage = (message) => {
-    if (socket && isConnected) {
-      socket.send(JSON.stringify(message));
-    }
+    console.log('Simulated message sent:', message);
+    // Simulate response
+    setTimeout(() => {
+      setGameData(simulateGameData());
+    }, 500);
   };
 
-  return { socket, isConnected, lastMessage, sendMessage };
+  return {
+    gameData,
+    isConnected,
+    sendMessage
+  };
 };
 
-export default useWebSocket;
+export default useGameData;

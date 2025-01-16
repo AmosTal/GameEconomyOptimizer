@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
+import { analyzePlayerBehavior } from '../utils/GameLogic';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -22,18 +22,14 @@ function PlayerBehavior() {
     }));
   };
 
-  const analyzePlayerBehavior = async () => {
-    try {
-      const response = await axios.post('/analyze/players', { config: playerConfig });
-      setBehaviorAnalysis(response.data);
-    } catch (error) {
-      console.error('Player behavior analysis failed:', error);
-    }
+  const analyzeBehavior = () => {
+    const results = analyzePlayerBehavior(playerConfig);
+    setBehaviorAnalysis(results);
   };
 
   const archetypeComparisonData = {
     labels: ['Retention Rate', 'Sessions', 'Progression', 'IAP Count', 'Engagement'],
-    datasets: Object.entries(behaviorAnalysis?.archetype_comparison || {}).map(([ archetype, data ], index) => ({
+    datasets: Object.entries(behaviorAnalysis?.archetype_comparison || {}).map(([archetype, data], index) => ({
       label: archetype,
       data: [
         data.avg_retention_rate,
@@ -86,7 +82,7 @@ function PlayerBehavior() {
       </div>
 
       <button 
-        onClick={analyzePlayerBehavior}
+        onClick={analyzeBehavior}
         className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
       >
         Analyze Player Behavior
@@ -100,12 +96,11 @@ function PlayerBehavior() {
             <Radar data={archetypeComparisonData} />
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4">Churn Risk Analysis</h3>
-            <div className="bg-gray-100 p-6 rounded text-center">
-              <p className="text-2xl font-bold text-red-600">
-                {behaviorAnalysis.churn_risk.toFixed(2)}%
-              </p>
-              <p className="text-gray-600">Estimated Churn Risk</p>
+            <h3 className="text-xl font-semibold mb-4">Player Metrics</h3>
+            <div className="bg-gray-100 p-4 rounded">
+              <p>Retention Score: {(behaviorAnalysis.player_metrics.retention_score * 100).toFixed(1)}%</p>
+              <p>Progression Score: {(behaviorAnalysis.player_metrics.progression_score * 100).toFixed(1)}%</p>
+              <p>Purchase Score: {(behaviorAnalysis.player_metrics.purchase_score * 100).toFixed(1)}%</p>
             </div>
           </div>
         </div>

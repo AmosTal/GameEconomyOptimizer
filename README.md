@@ -1,70 +1,67 @@
-# Game Economy Optimizer
+# Game Economy Simulator
 
-A sophisticated tool for simulating and optimizing game economies, analyzing player behavior, and providing monetization insights.
+A React-based tool for simulating and balancing game economies. This simulator helps game developers optimize their in-game economy by modeling player behavior, token distribution, and revenue projections.
 
 ## Features
 
-- Economy Simulator
-- Player Behavior Analysis
-- Monetization Insights
-- Real-time Data Visualization
-- Performance-Optimized UI
+- Real-time economy simulation
+- Token distribution analysis
+- Player retention tracking
+- Revenue projections
+- Interactive parameter adjustment
+- Visual data representation
 
-## Tech Stack
+## Key Parameters
 
-- Frontend: React.js with Tailwind CSS
-- Backend: Python Flask
-- Data Visualization: Chart.js
-- Real-time Updates: Socket.IO
+### Daily Login Reward
+Tokens given to players for logging in each day. Higher rewards increase player retention but might reduce purchases.
+- Default: 10 tokens
 
-## Local Development
+### Win Reward
+Tokens awarded for winning a game. Affects player engagement and token circulation in the economy.
+- Default: 25 tokens
 
-1. Clone the repository:
+### Board Unlock Cost
+Amount of tokens needed to unlock new content. Higher costs can increase revenue but might frustrate players.
+- Default: 500 tokens
+
+## Getting Started
+
+1. Clone the repository
 ```bash
-git clone https://github.com/AmosTal/GameEconomyOptimizer.git
-cd GameEconomyOptimizer
+git clone https://github.com/yourusername/game-economy-simulator.git
 ```
 
-2. Start both servers:
+2. Install dependencies
 ```bash
-python start_servers.py
+cd game-economy-simulator
+cd frontend
+npm install
 ```
 
-This will:
-- Set up Python virtual environment
-- Install backend dependencies
-- Install frontend dependencies
-- Start both servers
+3. Run the development server
+```bash
+npm start
+```
 
-The application will be available at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-## Railway Deployment
+## How It Works
 
-1. Create a new project on [Railway](https://railway.app/)
+The simulator calculates:
+- Days required to unlock content
+- Player retention rates
+- Daily token earnings
+- Warning indicators for potential issues
 
-2. Connect your GitHub repository
+When the Board Unlock Cost is too high relative to daily earnings (Daily Login Reward + Win Reward), you'll see:
+- Longer time to unlock content
+- Lower player retention
+- Warning messages about player frustration
+- Reduced daily active players
 
-3. Configure the following environment variables:
-   - `PORT`: The port for the backend server
-   - `FLASK_ENV`: Set to "production"
-   - `REACT_APP_API_URL`: Your Railway backend URL
+## Technologies Used
 
-4. Deploy:
-   - Railway will automatically detect the Procfile and deploy the backend
-   - For the frontend, create a new service and select "Static Site"
-   - Set the build command to: `cd frontend && npm install && npm run build`
-   - Set the static build directory to: `frontend/build`
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add YourFeature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Submit a pull request
-
-## License
-
-MIT License
+- React
+- Chart.js for data visualization
+- Tailwind CSS for styling

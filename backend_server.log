@@ -226,3 +226,14 @@
 2025-01-16 11:51:12,925 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:12] "GET /socket.io/?EIO=4&transport=polling&t=5hxqx23y&sid=w79Ke59gWLV2glwTAAAE HTTP/1.1" 200 -
 2025-01-16 11:51:22,770 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:22] "POST /analyze/monetization HTTP/1.1" 200 -
 2025-01-16 11:51:22,772 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:22] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 12:07:32,722 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:32] "OPTIONS /analyze/players HTTP/1.1" 200 -
+2025-01-16 12:07:32,943 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:32] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 12:07:35,244 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:35] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 12:07:35,556 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:35] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 12:07:44,527 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:44] "GET /socket.io/?EIO=4&transport=websocket&sid=w79Ke59gWLV2glwTAAAE HTTP/1.1" 200 -
+2025-01-16 12:07:50,522 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:50] "GET /socket.io/?EIO=4&transport=polling&t=63b9c67b HTTP/1.1" 200 -
+2025-01-16 12:07:50,781 - INFO: WebSocket client connected
+2025-01-16 12:07:50,782 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:50] "POST /socket.io/?EIO=4&transport=polling&t=63bi7gu1&sid=jFvnxj8CKZsA-9VEAAAG HTTP/1.1" 200 -
+2025-01-16 12:07:50,842 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:50] "GET /socket.io/?EIO=4&transport=polling&t=63bi9y90&sid=jFvnxj8CKZsA-9VEAAAG HTTP/1.1" 200 -
+2025-01-16 12:07:50,860 - INFO: 127.0.0.1 - - [16/Jan/2025 12:07:50] "GET /socket.io/?EIO=4&transport=polling&t=63brdngc&sid=jFvnxj8CKZsA-9VEAAAG HTTP/1.1" 200 -
+2025-01-16 12:14:31,654 - INFO: 127.0.0.1 - - [16/Jan/2025 12:14:31] "GET /socket.io/?EIO=4&transport=websocket&sid=jFvnxj8CKZsA-9VEAAAG HTTP/1.1" 200 -
