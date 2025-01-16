@@ -7,7 +7,7 @@ import MonetizationInsights from './pages/MonetizationInsights';
 
 function App() {
   return (
-    <Router basename="/GameEconomyOptimizer">
+    <Router basename="/game-economy-simulator">
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
         <header className="bg-opacity-90 backdrop-blur-sm border-b border-white/10">
           <div className="max-w-7xl mx-auto px-4 py-6">
