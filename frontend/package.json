@@ -2,6 +2,7 @@
   "name": "game-economy-simulator",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://amostal.github.io/GameEconomyOptimizer",
   "dependencies": {
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
@@ -20,14 +21,17 @@
     "react-app-rewired": "^2.2.1",
     "terser-webpack-plugin": "^4.2.3",
     "webpack-bundle-analyzer": "^4.5.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "gh-pages": "^6.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "REACT_APP_API_URL=https://web-production-cd87.up.railway.app react-scripts build",
+    "build": "react-scripts build",
     "serve": "serve -s build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

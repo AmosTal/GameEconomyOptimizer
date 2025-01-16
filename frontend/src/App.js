@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/GameEconomyOptimizer">
       <div className="min-h-screen board-container flex flex-col">
         {/* Mobile-Friendly Header */}
         <header className="bg-[#8B4513] text-white p-6 flex justify-between items-center">
