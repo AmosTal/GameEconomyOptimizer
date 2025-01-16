@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd frontend && npm install && npm run build"
+
+[deploy]
+startCommand = "cd frontend && npm run serve"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
+
+[service]
+rootDirectory = "frontend"
