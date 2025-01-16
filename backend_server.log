@@ -1,0 +1,228 @@
+2025-01-16 10:37:41,938 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:37:42,013 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:37:42,013 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:37:42,016 - INFO:  * Restarting with stat
+2025-01-16 10:37:42,637 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:37:42,674 - WARNING:  * Debugger is active!
+2025-01-16 10:37:42,683 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:38:16,725 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:38:16,800 - INFO:  * Restarting with stat
+2025-01-16 10:38:17,591 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:38:17,653 - WARNING:  * Debugger is active!
+2025-01-16 10:38:17,661 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:38:32,190 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:38:32,248 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:38:32,248 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:38:32,250 - INFO:  * Restarting with stat
+2025-01-16 10:38:32,839 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:38:32,876 - WARNING:  * Debugger is active!
+2025-01-16 10:38:32,883 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:41:46,429 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:41:46,715 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:42:02,776 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:42:02,846 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:42:02,846 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:42:02,849 - INFO:  * Restarting with stat
+2025-01-16 10:42:03,458 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:42:03,500 - WARNING:  * Debugger is active!
+2025-01-16 10:42:03,508 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:43:35,227 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:45:28,596 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:45:28,726 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:45:28,726 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:45:28,729 - INFO:  * Restarting with stat
+2025-01-16 10:45:29,580 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:45:29,643 - WARNING:  * Debugger is active!
+2025-01-16 10:45:29,662 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:45:39,677 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:45:39,749 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:45:39,749 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:45:39,752 - INFO:  * Restarting with stat
+2025-01-16 10:45:40,572 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:45:40,626 - WARNING:  * Debugger is active!
+2025-01-16 10:45:40,635 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:46:12,784 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:46:13,370 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:47:07,681 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:47:07,790 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:47:07,790 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:47:07,794 - INFO:  * Restarting with stat
+2025-01-16 10:47:08,546 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:47:08,590 - WARNING:  * Debugger is active!
+2025-01-16 10:47:08,608 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:48:30,292 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:48:30,451 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:48:30,451 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:48:30,457 - INFO:  * Restarting with stat
+2025-01-16 10:48:32,083 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:48:32,204 - WARNING:  * Debugger is active!
+2025-01-16 10:48:32,221 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:48:34,603 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:48:34,639 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\start_servers.py', reloading
+2025-01-16 10:48:34,746 - INFO:  * Restarting with stat
+2025-01-16 10:48:35,799 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:48:35,867 - WARNING:  * Debugger is active!
+2025-01-16 10:48:35,881 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:49:36,097 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:49:36,227 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:49:36,227 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:49:36,232 - INFO:  * Restarting with stat
+2025-01-16 10:49:37,249 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:49:37,310 - WARNING:  * Debugger is active!
+2025-01-16 10:49:37,326 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 10:53:00,991 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:53:01,103 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 10:53:01,104 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 10:53:01,107 - INFO:  * Restarting with stat
+2025-01-16 10:53:01,952 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 10:53:01,999 - WARNING:  * Debugger is active!
+2025-01-16 10:53:02,011 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:00:01,546 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\backend\\app.py', reloading
+2025-01-16 11:00:01,545 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\backend\\app.py', reloading
+2025-01-16 11:00:01,959 - INFO:  * Detected change in 'c:\\Users\\PC\\CascadeProjects\\GameEconomy\\backend\\app.py', reloading
+2025-01-16 11:04:00,671 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:04:00,726 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:04:00,726 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:04:00,726 - INFO:  * Restarting with stat
+2025-01-16 11:04:02,012 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:04:02,040 - WARNING:  * Debugger is active!
+2025-01-16 11:04:02,057 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:04:21,439 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:21] "GET /socket.io/?EIO=4&transport=polling&t=3to5g3mk HTTP/1.1" 200 -
+2025-01-16 11:04:21,700 - INFO: WebSocket client connected
+2025-01-16 11:04:21,701 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:21] "POST /socket.io/?EIO=4&transport=polling&t=3toebva1&sid=ovtovLlUozBJEfrBAAAA HTTP/1.1" 200 -
+2025-01-16 11:04:21,764 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:21] "GET /socket.io/?EIO=4&transport=polling&t=3toednub&sid=ovtovLlUozBJEfrBAAAA HTTP/1.1" 200 -
+2025-01-16 11:04:21,774 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:21] "GET /socket.io/?EIO=4&transport=polling&t=3tonfzy1&sid=ovtovLlUozBJEfrBAAAA HTTP/1.1" 200 -
+2025-01-16 11:04:44,946 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:44] "GET /socket.io/?EIO=4&transport=websocket&sid=ovtovLlUozBJEfrBAAAA HTTP/1.1" 200 -
+2025-01-16 11:04:45,644 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:45] "GET /socket.io/?EIO=4&transport=polling&t=3u6tr6vg HTTP/1.1" 200 -
+2025-01-16 11:04:45,903 - INFO: WebSocket client connected
+2025-01-16 11:04:45,904 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:45] "POST /socket.io/?EIO=4&transport=polling&t=3u72or7a&sid=fQZu9jRpJ1Cw2kD9AAAC HTTP/1.1" 200 -
+2025-01-16 11:04:45,965 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:45] "GET /socket.io/?EIO=4&transport=polling&t=3u72p948&sid=fQZu9jRpJ1Cw2kD9AAAC HTTP/1.1" 200 -
+2025-01-16 11:04:45,973 - INFO: 127.0.0.1 - - [16/Jan/2025 11:04:45] "GET /socket.io/?EIO=4&transport=polling&t=3u7bm5ok&sid=fQZu9jRpJ1Cw2kD9AAAC HTTP/1.1" 200 -
+2025-01-16 11:05:54,699 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:05:54,756 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:05:54,756 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:05:54,757 - INFO:  * Restarting with stat
+2025-01-16 11:05:55,990 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:05:56,008 - WARNING:  * Debugger is active!
+2025-01-16 11:05:56,017 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:10:05,225 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:05] "OPTIONS /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:05,489 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:05] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:05,707 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:05] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:06,833 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:06] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:07,137 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:07] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:08,045 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:08] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:08,308 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:08] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:08,716 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:08] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:09,498 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:09] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:09,763 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:09] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:15,570 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:15] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 11:10:15,888 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:15] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 11:10:25,332 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:25] "OPTIONS /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:25,674 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:25] "POST /analyze/players HTTP/1.1" 200 -
+2025-01-16 11:10:56,631 - INFO: 127.0.0.1 - - [16/Jan/2025 11:10:56] "GET /socket.io/?EIO=4&transport=websocket&sid=fQZu9jRpJ1Cw2kD9AAAC HTTP/1.1" 200 -
+2025-01-16 11:25:22,782 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:25:22,844 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:25:22,845 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:25:22,845 - INFO:  * Restarting with stat
+2025-01-16 11:25:24,007 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:25:24,025 - WARNING:  * Debugger is active!
+2025-01-16 11:25:24,037 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:28:53,541 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:28:53,604 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:28:53,604 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:28:53,605 - INFO:  * Restarting with stat
+2025-01-16 11:28:54,870 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:28:54,889 - WARNING:  * Debugger is active!
+2025-01-16 11:28:54,902 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:29:18,259 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:18] "GET /socket.io/?EIO=4&transport=polling&t=4pr3vv7r HTTP/1.1" 200 -
+2025-01-16 11:29:18,522 - INFO: WebSocket client connected
+2025-01-16 11:29:18,522 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:18] "POST /socket.io/?EIO=4&transport=polling&t=4prcqrvp&sid=nktipRRZlL2CngqgAAAA HTTP/1.1" 200 -
+2025-01-16 11:29:18,583 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:18] "GET /socket.io/?EIO=4&transport=polling&t=4prcsbfo&sid=nktipRRZlL2CngqgAAAA HTTP/1.1" 200 -
+2025-01-16 11:29:18,596 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:18] "GET /socket.io/?EIO=4&transport=polling&t=4prlri9i&sid=nktipRRZlL2CngqgAAAA HTTP/1.1" 200 -
+2025-01-16 11:29:36,918 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:36] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 11:29:36,919 - INFO: 127.0.0.1 - - [16/Jan/2025 11:29:36] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 11:42:57,432 - INFO: 127.0.0.1 - - [16/Jan/2025 11:42:57] "GET /socket.io/?EIO=4&transport=websocket&sid=nktipRRZlL2CngqgAAAA HTTP/1.1" 200 -
+2025-01-16 11:42:59,662 - INFO: 127.0.0.1 - - [16/Jan/2025 11:42:59] "GET /socket.io/?EIO=4&transport=polling&t=57cuwqgy HTTP/1.1" 200 -
+2025-01-16 11:42:59,901 - INFO: WebSocket client connected
+2025-01-16 11:42:59,906 - INFO: 127.0.0.1 - - [16/Jan/2025 11:42:59] "POST /socket.io/?EIO=4&transport=polling&t=57d5imz3&sid=tMXgER_pEKUmxZHLAAAC HTTP/1.1" 200 -
+2025-01-16 11:42:59,991 - INFO: 127.0.0.1 - - [16/Jan/2025 11:42:59] "GET /socket.io/?EIO=4&transport=polling&t=57d5lo1b&sid=tMXgER_pEKUmxZHLAAAC HTTP/1.1" 200 -
+2025-01-16 11:43:00,044 - INFO: 127.0.0.1 - - [16/Jan/2025 11:43:00] "GET /socket.io/?EIO=4&transport=polling&t=57dejzy1&sid=tMXgER_pEKUmxZHLAAAC HTTP/1.1" 200 -
+2025-01-16 11:45:49,599 - INFO: 127.0.0.1 - - [16/Jan/2025 11:45:49] "GET /socket.io/?EIO=4&transport=websocket&sid=tMXgER_pEKUmxZHLAAAC HTTP/1.1" 200 -
+2025-01-16 11:47:15,316 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:47:15,412 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:47:15,412 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:47:15,412 - INFO:  * Restarting with stat
+2025-01-16 11:47:16,565 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:47:16,594 - WARNING:  * Debugger is active!
+2025-01-16 11:47:16,613 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:48:30,688 - INFO: 127.0.0.1 - - [16/Jan/2025 11:48:30] "GET / HTTP/1.1" 200 -
+2025-01-16 11:48:38,296 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:48:38,388 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:48:38,388 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:48:38,388 - INFO:  * Restarting with stat
+2025-01-16 11:48:39,614 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:48:39,640 - WARNING:  * Debugger is active!
+2025-01-16 11:48:39,655 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:50:13,373 - INFO: 127.0.0.1 - - [16/Jan/2025 11:50:13] "GET / HTTP/1.1" 200 -
+2025-01-16 11:50:50,151 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:50:50,216 - INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.102.5:5000
+2025-01-16 11:50:50,216 - INFO: [33mPress CTRL+C to quit[0m
+2025-01-16 11:50:50,216 - INFO:  * Restarting with stat
+2025-01-16 11:50:51,204 - INFO: Starting Game Economy Simulation Backend
+2025-01-16 11:50:51,222 - WARNING:  * Debugger is active!
+2025-01-16 11:50:51,232 - INFO:  * Debugger PIN: 150-577-618
+2025-01-16 11:51:12,580 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:12] "GET /socket.io/?EIO=4&transport=polling&t=5hx8cuec HTTP/1.1" 200 -
+2025-01-16 11:51:12,834 - INFO: WebSocket client connected
+2025-01-16 11:51:12,836 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:12] "POST /socket.io/?EIO=4&transport=polling&t=5hxhr2kq&sid=w79Ke59gWLV2glwTAAAE HTTP/1.1" 200 -
+2025-01-16 11:51:12,902 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:12] "GET /socket.io/?EIO=4&transport=polling&t=5hxhts0q&sid=w79Ke59gWLV2glwTAAAE HTTP/1.1" 200 -
+2025-01-16 11:51:12,925 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:12] "GET /socket.io/?EIO=4&transport=polling&t=5hxqx23y&sid=w79Ke59gWLV2glwTAAAE HTTP/1.1" 200 -
+2025-01-16 11:51:22,770 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:22] "POST /analyze/monetization HTTP/1.1" 200 -
+2025-01-16 11:51:22,772 - INFO: 127.0.0.1 - - [16/Jan/2025 11:51:22] "POST /analyze/monetization HTTP/1.1" 200 -
