@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/game-economy-simulator/static/css/main.d9273247.css",
-    "main.js": "/game-economy-simulator/static/js/main.75c56cba.js",
-    "index.html": "/game-economy-simulator/index.html",
-    "main.d9273247.css.map": "/game-economy-simulator/static/css/main.d9273247.css.map",
-    "main.75c56cba.js.map": "/game-economy-simulator/static/js/main.75c56cba.js.map"
+    "main.css": "/GameEconomyOptimizer/static/css/main.d9273247.css",
+    "main.js": "/GameEconomyOptimizer/static/js/main.c5357cb3.js",
+    "index.html": "/GameEconomyOptimizer/index.html",
+    "main.d9273247.css.map": "/GameEconomyOptimizer/static/css/main.d9273247.css.map",
+    "main.c5357cb3.js.map": "/GameEconomyOptimizer/static/js/main.c5357cb3.js.map"
   },
   "entrypoints": [
     "static/css/main.d9273247.css",
-    "static/js/main.75c56cba.js"
+    "static/js/main.c5357cb3.js"
   ]
 }
